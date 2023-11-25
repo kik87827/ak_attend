@@ -50,6 +50,15 @@
 .middle_singlie_wrap{width:100%;box-sizing: border-box;padding:24px;}
 .middle_single_title{text-align: center;color:#212121;font-size:28px; font-weight:700;}
 .middle_single_content{margin-top:40px;}
+.middle_single_content .single_form_field_row{}
+
+.choice_box_list{}
+.choice_box_list > li{}
+.choice_box_list > li:last-of-type{}
+.choice_box{}
+.choice_box.type2{}
+.choice_box.type2 .choice_box_text{}
+.choice_box_text{}
 
 .btn_bottom_layer{display:block;position:fixed;bottom:0;left:50%;z-index:10;transform:translate(-50%);width:720px;box-sizing: border-box;height:0;display:flex;justify-content: end; align-items: flex-end;}
 .btn_topgo{display:block;width:40px;height:40px;background:#ffffff url("../images/ico_topgo.png") no-repeat 50% 50%/25px auto; border-radius: 100%;position:absolute;bottom:24px;right:24px;}
@@ -63,6 +72,34 @@
 .middle_title_row{margin-top:42px;text-align: center;}
 .middle_title{color:#212121;font-size:28px;font-weight:700;}
 .middle_contents{margin-top:40px;}
+
+.search_field_zone{}
+.search_field_wrap{}
+.search_field_short_cols{}
+.search_field_long_cols{}
+.search_field_long_cols input.form_input{}
+.combo_item_group{}
+.combo_item_target{}
+.combo_option_list_wrap{}
+.combo_option_list{}
+.combo_option_list > li{}
+.combo_option_list > li:last-of-type{}
+.combo_option{}
+.search_field_zone{}
+input.form_input{}
+.serach_btn_wrap{}
+.serach_btn_wrap{}
+.btn_submit_box{}
+.btn_control_box_group{}
+.btn_control_box{}
+
+.single_for_row{}
+.single_for_row input.form_input{}
+.single_for_row:last-of-type{}
+.btn_single_submit_box{}
+.btn_single_submit_text{}
+.section_title_row{}
+.section_title{}
 
 
 /* 공통 popup */
@@ -106,3 +143,24 @@
 
     .btn_bottom_layer{left:0;transform: none;}
 }
+
+
+/* sub */
+.board_util_row{}
+.board_util_cols{}
+.board_util_cols:last-of-type{}
+.board_count_group{}
+.current_textbox_list{}
+.current_textbox_list > li{}
+.current_textbox_list > li:last-of-type{}
+.current_textbox{}
+.current_textbox_bullet{}
+.current_textbox_para{}
+.board_table_wrap{}
+.board_table{}
+.board_table thead tr{}
+.board_table thead tr th{}
+.board_table thead tr th:last-of-type{}
+.board_table tbody tr{}
+.board_table tbody tr td{}
+.board_table tbody tr td:last-of-type{}
