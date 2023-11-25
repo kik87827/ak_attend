@@ -43,13 +43,13 @@
                 <div class="search_field_zone">
                     <div class="search_field_wrap">
                         <div class="search_field_short_cols">
-                            <div class="combo_item_group">
+                            <div class="combo_item_group" id="combo_sort_item">
                                 <a href="#" class="combo_item_target">FC명</a>
                                 <div class="combo_option_list_wrap">
                                     <ul class="combo_option_list">
-                                        <li><a href="#" class="combo_option">FC명</a></li>
-                                        <li><a href="#" class="combo_option">고객명</a></li>
-                                        <li><a href="#" class="combo_option">연락처</a></li>
+                                        <li><a href="#" class="combo_option" data-value="0">FC명</a></li>
+                                        <li><a href="#" class="combo_option" data-value="1">고객명</a></li>
+                                        <li><a href="#" class="combo_option" data-value="2">연락처</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -167,9 +167,9 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="nodata_tr">
+                           <!--  <tr class="nodata_tr">
                                 <td colspan="5" class="nodata_td"><p class="nodata_para">데이터가 없습니다.</p></td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -299,10 +299,19 @@
 				var listModal = new DesignPopup({
 					selector: "#listModalPopup"
 				});
+                // 퍼블확인용
                 if(url_2 === "popup"){
                     // 호출
                     listModal.popupShow();
                 }
+
+                // select callback
+                comboChangeCallback({
+                    target : '#combo_sort_item',
+                    callback(value){
+                        console.log(value);
+                    }
+                })
 			});
 		</script>
     </div>

@@ -1,5 +1,6 @@
 window.addEventListener("DOMContentLoaded", () => {
   commonInit();
+  comboFunc();
 });
 window.addEventListener("load", () => {
   layoutFunc();
@@ -75,10 +76,10 @@ function layoutFunc() {
     const body_dom = document.querySelector("body");
     const btn_topgo = document.querySelector(".btn_topgo");
 
-    action();
+    /* action();
     window.addEventListener("scroll",()=>{
       action();
-    });
+    }); */
 
     if(!!btn_topgo){
       btn_topgo.addEventListener("click",(e)=>{
@@ -101,7 +102,7 @@ function layoutFunc() {
       }
     }
   }
-  //pageTopgo();
+  pageTopgo();
   headerMenu();
 }
 
@@ -280,3 +281,43 @@ DesignPopup.prototype.bindEvent = function() {
     });
   }
 };
+
+
+function comboFunc(){
+  // const combo_item_target = document.querySelectorAll(".combo_item_target");
+  // if(!!combo_item_target){
+  //   combo_item_target.addEventListener("click",(e)=>{
+  //     e.preventDefault();
+  //     let eventTarget = e.currentTarget;
+  //     let eventParent = eventTarget.closest(".combo_item_group");
+  //     eventParent.classList.toggle("eventParent");
+  //   });
+  // }
+
+  addDynamicEventListener(document.body, 'click', '.combo_item_target', function(e) {
+    e.preventDefault();
+    let eventTarget = e.target;
+    let eventParent = eventTarget.closest(".combo_item_group");
+    eventParent.classList.toggle("active");
+  });
+
+  addDynamicEventListener(document.body, 'click', '.combo_option', function(e) {
+    e.preventDefault();
+    let eventTarget = e.target;
+    let eventParent = eventTarget.closest(".combo_item_group");
+    let eventParentTarget = eventParent.querySelector(".combo_item_target");
+    eventParent.classList.remove("active");
+    eventParentTarget.textContent = eventTarget.textContent;
+  });
+}
+
+
+function comboChangeCallback(option) {
+  addDynamicEventListener(document.body, 'click', `${option.target} .combo_option`, function(e) {
+    let thisEventObj = e.target;
+    let thisEventObjValue = thisEventObj.getAttribute("data-value");
+    if ("callback" in option) {
+      option.callback(thisEventObjValue);
+    }
+  });
+}
